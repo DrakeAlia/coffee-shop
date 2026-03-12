@@ -1,0 +1,69 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import Image from "next/image";
+
+export default function HyggeSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  return (
+    <section ref={ref} id="hygge" className="bg-warm-white py-32 lg:py-40">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          {/* Image with hover zoom */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.8 }}
+            whileHover={{ scale: 1.03 }}
+            className="relative h-[500px] lg:h-[600px] overflow-hidden border border-stone/10 cursor-pointer"
+          >
+            <Image
+              src="https://static.wixstatic.com/media/2fcf09_10abbe84be72490792decd5fca5ea38c~mv2.jpg"
+              alt="Cozy cafe interior"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </motion.div>
+
+          {/* Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-8"
+          >
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="h-px w-12 bg-cafe-accent" />
+                <span className="text-cafe-accent uppercase text-xs font-medium tracking-widest">
+                  Our Philosophy
+                </span>
+              </div>
+
+              <h2 className="text-5xl sm:text-6xl font-serif font-light text-charcoal">
+                Welcome to your <span className="italic font-normal">hygge</span>
+              </h2>
+            </div>
+
+            <div className="space-y-6 text-stone text-base leading-loose max-w-prose">
+              <p>
+                In Danish, <span className="italic">hygge</span> means a quality of coziness that makes one feel content and comfortable. It's the warm glow of candlelight on a winter evening, the comfort of your favorite chair, the presence of good friends.
+              </p>
+              <p>
+                At Cafe Hagen, we've cultivated spaces across Seattle where you can find your own hygge. Whether you're savoring our carefully crafted espresso, enjoying a leisurely brunch, or simply finding a quiet moment with a book, we're here to make you feel at home.
+              </p>
+            </div>
+
+            <button className="bg-[#C4956A] text-white hover:bg-[#A37A52] px-10 py-4 uppercase text-xs tracking-widest font-medium transition-colors rounded-none">
+              Our Story
+            </button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}

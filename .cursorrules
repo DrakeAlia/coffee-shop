@@ -1,0 +1,11 @@
+This is a Next.js 15 App Router project using TypeScript, Tailwind v4,
+Framer Motion, Radix UI, and shadcn/ui.
+
+- All components go in /components
+- Use CSS variables in globals.css for brand colors
+- Use cn() from @/lib/utils for conditional classNames
+- Prefer Framer Motion useInView for scroll animations
+- "use client" only when component needs interactivity
+- font-display class = Cormorant Garamond (headings)
+- DM Sans = body text
+- Brand colors: cream #F5F0E8, charcoal #1E1C1A, accent #C4956A
