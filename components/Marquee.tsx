@@ -3,16 +3,14 @@
 import { motion } from "framer-motion";
 
 const marqueeText = [
+  "Single Origin",
+  "Direct Trade",
+  "Small Batch Roasted",
+  "Est. Seattle",
   "Specialty Coffee",
-  "Brunch & Lunch",
-  "Wine & Cocktails",
+  "Brunch & Wine",
+  "Six Locations",
   "Hagen Coffee Roasters",
-  "SLU",
-  "Queen Anne",
-  "Dexter",
-  "Uptown",
-  "Bellevue",
-  "Kirkland",
 ];
 
 export default function Marquee() {

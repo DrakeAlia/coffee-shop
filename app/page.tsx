@@ -5,6 +5,7 @@ import HyggeSection from "@/components/HyggeSection";
 import Locations from "@/components/Locations";
 import MenuSection from "@/components/MenuSection";
 import Gallery from "@/components/Gallery";
+import MoodSection from "@/components/MoodSection";
 import Testimonials from "@/components/Testimonials";
 import BellevueSpotlight from "@/components/BellevueSpotlight";
 import RoastersSection from "@/components/RoastersSection";
@@ -21,6 +22,7 @@ export default function Home() {
       <Locations />
       <MenuSection />
       <Gallery />
+      <MoodSection />
       <Testimonials />
       <BellevueSpotlight />
       <RoastersSection />

@@ -38,30 +38,87 @@ export default function Gallery() {
           </h2>
         </motion.div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={
-                isInView
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 0, scale: 0.95 }
-              }
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative aspect-square overflow-hidden cursor-pointer border border-stone/10"
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-300" />
-            </motion.div>
-          ))}
+        {/* Gallery Grid - Asymmetric Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-1 auto-rows-[400px]">
+          {/* Row 1: Wide brunch spread + tall image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={
+              isInView
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 0.95 }
+            }
+            transition={{ duration: 0.5, delay: 0 }}
+            className="group relative overflow-hidden cursor-pointer border border-stone/10 col-span-1 sm:col-span-2 row-span-1"
+          >
+            <Image
+              src={galleryImages[1].src}
+              alt={galleryImages[1].alt}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              sizes="(max-width: 640px) 100vw, 66vw"
+            />
+            <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-300" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={
+              isInView
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 0.95 }
+            }
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="group relative overflow-hidden cursor-pointer border border-stone/10 col-span-1 row-span-2"
+          >
+            <Image
+              src={galleryImages[0].src}
+              alt={galleryImages[0].alt}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-300" />
+          </motion.div>
+
+          {/* Row 2: Tall + square + tall */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={
+              isInView
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 0.95 }
+            }
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="group relative overflow-hidden cursor-pointer border border-stone/10 col-span-1 row-span-1"
+          >
+            <Image
+              src={galleryImages[2].src}
+              alt={galleryImages[2].alt}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-300" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={
+              isInView
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 0.95 }
+            }
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden cursor-pointer border border-stone/10 col-span-1 row-span-1"
+          >
+            <Image
+              src={galleryImages[3].src}
+              alt={galleryImages[3].alt}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-300" />
+          </motion.div>
         </div>
 
         {/* Instagram CTA */}
