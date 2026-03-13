@@ -120,7 +120,7 @@ export default function MenuSection() {
                               variant="outline"
                               className="bg-cafe-accent/10 text-cafe-accent border-cafe-accent/20 text-xs"
                             >
-                              Chef's Pick
+                              Chef&apos;s Pick
                             </Badge>
                           )}
                         </div>

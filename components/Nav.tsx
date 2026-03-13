@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, ArrowRight } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -10,7 +10,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Badge } from "@/components/ui/badge";
 
 const navLinks = [
   { href: "#hygge", label: "Our Story" },
@@ -90,31 +89,36 @@ export default function Nav() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-warm-white border-l border-stone/10 w-full sm:w-80"
+              className="bg-charcoal border-l border-warm-white/10 w-full sm:w-80 px-6 [&>button]:text-warm-white/60 [&>button]:hover:text-warm-white [&>button]:border-0 [&>button]:bg-transparent [&>button]:hover:bg-warm-white/10 [&>button_svg]:text-warm-white/60 [&>button:hover_svg]:text-warm-white [&>button]:top-6 [&>button]:right-6"
             >
-              <SheetHeader>
-                <SheetTitle className="text-2xl font-serif font-bold text-charcoal">
+              <SheetHeader className="text-left pb-2 pt-6">
+                <SheetTitle className="text-warm-white font-serif text-3xl font-light">
                   Cafe Hagen
                 </SheetTitle>
+                <div className="h-px w-12 bg-cafe-accent mt-3" />
               </SheetHeader>
-              <div className="flex flex-col gap-2 mt-8">
+              <div className="flex flex-col mt-6">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium text-charcoal hover:text-cafe-accent transition-colors py-4 min-h-[48px] flex items-center"
+                    className="group flex items-center justify-between py-5 border-b border-warm-white/10 text-warm-white/70 hover:text-warm-white transition-all duration-200 text-lg font-light tracking-wide w-full"
                   >
                     {link.label}
+                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" />
                   </Link>
                 ))}
                 <a
                   href="/order"
                   onClick={() => setIsOpen(false)}
-                  className="bg-[#C4956A] text-white px-6 py-2.5 text-xs tracking-widest uppercase font-medium hover:bg-[#A37A52] transition-colors mt-4 inline-block text-center rounded-none"
+                  className="w-full bg-[#C4956A] text-white py-5 text-xs tracking-widest uppercase font-medium hover:bg-[#A37A52] transition-colors text-center mt-10 block rounded-none"
                 >
                   Order Online
                 </a>
+                <p className="text-warm-white/30 text-xs text-center mt-6 pb-8 tracking-widest uppercase">
+                  Specialty Coffee · Seattle
+                </p>
               </div>
             </SheetContent>
           </Sheet>

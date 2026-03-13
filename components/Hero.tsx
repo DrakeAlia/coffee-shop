@@ -73,12 +73,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-6 items-center"
           >
-            <button className="bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none w-full sm:w-auto">
+            <a href="#locations" className="bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none w-full sm:w-auto">
               Find a Location
-            </button>
-            <button className="text-warm-white text-sm underline underline-offset-4 hover:text-warm-white/80 transition-colors">
+            </a>
+            <a href="#hygge" className="text-warm-white text-sm underline underline-offset-4 hover:text-warm-white/80 transition-colors">
               Our Story
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>
