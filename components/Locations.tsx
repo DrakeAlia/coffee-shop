@@ -4,6 +4,12 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const locations = [
   {
@@ -33,7 +39,7 @@ const locations = [
   {
     name: "Bellevue",
     neighborhood: "Downtown Bellevue",
-    address: "10500 NE 8th St",
+    address: "10500 NE 8th St, WA 98004",
     hours: "6am - 8pm Daily",
   },
   {
@@ -47,6 +53,14 @@ const locations = [
 export default function Locations() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  const getMapUrl = (location: typeof locations[0]) => {
+    if (location.name === "Bellevue") {
+      return "https://maps.google.com/?q=10500+NE+8th+St+Bellevue+WA";
+    }
+    const encodedAddress = encodeURIComponent(location.address);
+    return `https://maps.google.com/?q=${encodedAddress}+Seattle+WA`;
+  };
 
   return (
     <section ref={ref} id="locations" className="bg-charcoal py-32 lg:py-40">
@@ -72,18 +86,23 @@ export default function Locations() {
         <div className="h-12" />
 
         {/* List */}
-        <div className="space-y-0">
-          {locations.map((location, index) => (
-            <motion.div
-              key={location.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
-            >
-              <Link
-                href={`/locations/${location.name.toLowerCase()}`}
-                className="group block py-8 px-4 border-b border-stone/15 hover:bg-warm-white/5 transition-colors relative"
+        <TooltipProvider>
+          <div className="space-y-0">
+            {locations.map((location, index) => (
+              <motion.div
+                key={location.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: index * 0.08 }}
               >
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={getMapUrl(location)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block py-8 px-4 border-b border-stone/15 hover:bg-warm-white/5 transition-colors relative"
+                    >
                 {/* Animated hover line */}
                 <motion.div
                   initial={{ scaleX: 0 }}
@@ -146,9 +165,18 @@ export default function Locations() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
-          ))}
-        </div>
+            </TooltipTrigger>
+            <TooltipContent
+              className="bg-[#C4956A] text-white text-xs px-3 py-1.5 rounded-none border-none"
+              sideOffset={5}
+            >
+              Open in Maps →
+            </TooltipContent>
+          </Tooltip>
+        </motion.div>
+      ))}
+    </div>
+  </TooltipProvider>
       </div>
     </section>
   );

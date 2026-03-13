@@ -18,10 +18,10 @@ export default function HyggeSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
             whileHover={{ scale: 1.03 }}
-            className="relative h-[500px] lg:h-[600px] overflow-hidden border border-stone/10 cursor-pointer"
+            className="relative h-64 lg:h-[600px] overflow-hidden border border-stone/10 cursor-pointer"
           >
             <Image
-              src="https://static.wixstatic.com/media/2fcf09_10abbe84be72490792decd5fca5ea38c~mv2.jpg"
+              src="https://static.wixstatic.com/media/2fcf09_fecbe3658cd848da944feb652ad88256~mv2.jpg/v1/fill/w_976,h_423,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/W%20%2B%20M-8842-2.jpg"
               alt="Cozy cafe interior"
               fill
               className="object-cover"

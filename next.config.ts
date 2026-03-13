@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    domains: ['static.wixstatic.com'],
+    domains: ['static.wixstatic.com', 'res.cloudinary.com', 'www.discoverslu.com'],
   },
 };
 

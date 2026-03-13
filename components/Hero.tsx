@@ -24,7 +24,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Content - Bottom Left */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 lg:pb-32">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24 lg:pb-32">
         <div className="max-w-3xl">
           {/* Horizontal Rule with animated width */}
           <motion.div
@@ -50,7 +50,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] font-serif font-light text-warm-white mb-8 leading-[1.05]"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-[88px] font-serif font-light text-warm-white mb-8 leading-[1.05]"
             >
               Find your <span className="italic font-normal">hygge</span> here.
             </motion.h1>
@@ -73,7 +73,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-6 items-start"
           >
-            <button className="bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none">
+            <button className="bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none w-full sm:w-auto">
               Find a Location
             </button>
             <button className="text-warm-white text-sm underline underline-offset-4 hover:text-warm-white/80 transition-colors">

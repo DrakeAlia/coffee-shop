@@ -39,9 +39,7 @@ export default function BellevueSpotlight() {
                 <div>
                   <p className="text-charcoal font-medium mb-1 text-sm">Address</p>
                   <p className="text-stone text-base">
-                    10500 NE 8th St
-                    <br />
-                    Bellevue, WA 98004
+                    10500 NE 8th St, Bellevue, WA 98004
                   </p>
                 </div>
               </div>
@@ -74,28 +72,43 @@ export default function BellevueSpotlight() {
               </div>
             </div>
 
-            <button className="bg-[#C4956A] text-white px-8 py-3 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none">
+            <a
+              href="https://maps.google.com/?q=10500+NE+8th+St+Bellevue+WA+98004"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#C4956A] text-white px-8 py-3 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none"
+            >
               Get Directions
-            </button>
+            </a>
           </motion.div>
 
-          {/* Map */}
+          {/* Map Link */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[400px] lg:h-[500px] overflow-hidden border border-stone/10"
+            className="relative h-[400px] lg:h-[500px] overflow-hidden border border-stone/10 bg-charcoal flex flex-col items-center justify-center p-8 text-center space-y-8"
           >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2690.1234!2d-122.2!3d47.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDM2JzAwLjAiTiAxMjLCsDEyJzAwLjAiVw!5e0!3m2!1sen!2sus!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Cafe Hagen Bellevue Location"
-            />
+            <MapPin className="w-16 h-16 text-cafe-accent" />
+            <div>
+              <h3 className="text-3xl sm:text-4xl font-serif font-light text-warm-white mb-4">
+                Visit Us
+              </h3>
+              <p className="text-warm-white/90 text-lg mb-2">
+                10500 NE 8th St
+              </p>
+              <p className="text-warm-white/90 text-lg">
+                Bellevue, WA 98004
+              </p>
+            </div>
+            <a
+              href="https://maps.google.com/?q=10500+NE+8th+St+Bellevue+WA+98004"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none"
+            >
+              Open in Google Maps
+            </a>
           </motion.div>
         </div>
       </div>

@@ -5,12 +5,12 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
 const galleryImages = [
-  { src: "https://static.wixstatic.com/media/2fcf09_886aa7c39bf54c33b875fcd2841be6d5~mv2.jpg", alt: "Latte art" },
-  { src: "https://static.wixstatic.com/media/2fcf09_9c1a00da944e44a38c821e2815c29328~mv2_d_4899_3266_s_4_2.jpg", alt: "Fresh pastries" },
-  { src: "https://static.wixstatic.com/media/2fcf09_10abbe84be72490792decd5fca5ea38c~mv2.jpg", alt: "Cafe interior" },
-  { src: "https://static.wixstatic.com/media/2fcf09_886aa7c39bf54c33b875fcd2841be6d5~mv2.jpg", alt: "Coffee brewing" },
-  { src: "https://static.wixstatic.com/media/2fcf09_9c1a00da944e44a38c821e2815c29328~mv2_d_4899_3266_s_4_2.jpg", alt: "Brunch plate" },
-  { src: "https://static.wixstatic.com/media/2fcf09_10abbe84be72490792decd5fca5ea38c~mv2.jpg", alt: "Coffee beans" },
+  { src: "https://static.wixstatic.com/media/3cf4b9_79a4e73385b647f6874d50278a0836f9~mv2.jpg/v1/fill/w_980,h_1470,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3cf4b9_79a4e73385b647f6874d50278a0836f9~mv2.jpg", alt: "Salmon breakfast bun" },
+  { src: "https://static.wixstatic.com/media/3cf4b9_2128aa9a95d941c1bce007f7b4a92531~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3cf4b9_2128aa9a95d941c1bce007f7b4a92531~mv2.jpg", alt: "Brunch spread" },
+  { src: "https://static.wixstatic.com/media/3cf4b9_35fe7452d8df44bebe68fb9033337aa7~mv2.jpg/v1/fill/w_980,h_1470,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3cf4b9_35fe7452d8df44bebe68fb9033337aa7~mv2.jpg", alt: "Brunch board" },
+  { src: "https://static.wixstatic.com/media/3cf4b9_4b547ddae32f47c789a853d7e1241033~mv2.jpg/v1/fill/w_980,h_980,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3cf4b9_4b547ddae32f47c789a853d7e1241033~mv2.jpg", alt: "Cocktails" },
+  { src: "https://static.wixstatic.com/media/3cf4b9_4aa00082f0f644029de34d3ea863397c~mv2.jpg/v1/fill/w_980,h_1470,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3cf4b9_4aa00082f0f644029de34d3ea863397c~mv2.jpg", alt: "Waffle and fruit" },
+  { src: "https://static.wixstatic.com/media/3cf4b9_e73d3f392ce8475abb0d60694d7507dd~mv2.jpg/v1/fill/w_980,h_1470,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3cf4b9_e73d3f392ce8475abb0d60694d7507dd~mv2.jpg", alt: "Salmon mousse toast" },
 ];
 
 export default function Gallery() {
@@ -39,7 +39,7 @@ export default function Gallery() {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}

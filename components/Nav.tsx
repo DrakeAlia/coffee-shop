@@ -90,20 +90,20 @@ export default function Nav() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-warm-white border-l border-stone/10"
+              className="bg-warm-white border-l border-stone/10 w-full sm:w-80"
             >
               <SheetHeader>
                 <SheetTitle className="text-2xl font-serif font-bold text-charcoal">
                   Cafe Hagen
                 </SheetTitle>
               </SheetHeader>
-              <div className="flex flex-col gap-6 mt-8">
+              <div className="flex flex-col gap-2 mt-8">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium text-charcoal hover:text-cafe-accent transition-colors"
+                    className="text-lg font-medium text-charcoal hover:text-cafe-accent transition-colors py-4 min-h-[48px] flex items-center"
                   >
                     {link.label}
                   </Link>
