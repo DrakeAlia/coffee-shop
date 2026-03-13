@@ -39,7 +39,10 @@ export default function BellevueSpotlight() {
                 <div>
                   <p className="text-charcoal font-medium mb-1 text-sm">Address</p>
                   <p className="text-stone text-base">
-                    10500 NE 8th St, Bellevue, WA 98004
+                    777 108th Ave NE, Bellevue, WA 98004
+                  </p>
+                  <p className="text-stone/60 text-sm">
+                    Symetra Financial Center · Floor 1
                   </p>
                 </div>
               </div>
@@ -73,7 +76,7 @@ export default function BellevueSpotlight() {
             </div>
 
             <a
-              href="https://maps.google.com/?q=10500+NE+8th+St+Bellevue+WA+98004"
+              href="https://www.google.com/maps?sca_esv=5176837d497f6a28&output=search&q=cafe+hagen+bellevue&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpUrv6YeyJhXfuYqj4Fj6c1U4Z6Yq0xAU8tFlmuJvKXCuCpPJN5Ow4lqJLeH5KKHuHmsErR-gxmpUSArNcd6DRYQ-Zi-zw8uKivhfqeezelRQqEYypuDsfSXneL-73ztgq2R0jRCR6S24NoBcpaiN_YJimzWIBtIp_nrkjPQ5lhhS7lyV1QRE2-1cA2CaXpDNB7b1Z3g&entry=mc&ved=1t:200715&ictx=111"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#C4956A] text-white px-8 py-3 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none"
@@ -95,14 +98,17 @@ export default function BellevueSpotlight() {
                 Visit Us
               </h3>
               <p className="text-warm-white/90 text-lg mb-2">
-                10500 NE 8th St
+                777 108th Ave NE
               </p>
-              <p className="text-warm-white/90 text-lg">
+              <p className="text-warm-white/90 text-lg mb-2">
                 Bellevue, WA 98004
+              </p>
+              <p className="text-warm-white/60 text-sm">
+                Symetra Financial Center · Floor 1
               </p>
             </div>
             <a
-              href="https://maps.google.com/?q=10500+NE+8th+St+Bellevue+WA+98004"
+              href="https://www.google.com/maps?sca_esv=5176837d497f6a28&output=search&q=cafe+hagen+bellevue&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpUrv6YeyJhXfuYqj4Fj6c1U4Z6Yq0xAU8tFlmuJvKXCuCpPJN5Ow4lqJLeH5KKHuHmsErR-gxmpUSArNcd6DRYQ-Zi-zw8uKivhfqeezelRQqEYypuDsfSXneL-73ztgq2R0jRCR6S24NoBcpaiN_YJimzWIBtIp_nrkjPQ5lhhS7lyV1QRE2-1cA2CaXpDNB7b1Z3g&entry=mc&ved=1t:200715&ictx=111"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none"

@@ -39,7 +39,7 @@ const locations = [
   {
     name: "Bellevue",
     neighborhood: "Downtown Bellevue",
-    address: "10500 NE 8th St, WA 98004",
+    address: "777 108th Ave NE, Bellevue, WA 98004",
     hours: "6am - 8pm Daily",
   },
   {
@@ -56,7 +56,7 @@ export default function Locations() {
 
   const getMapUrl = (location: typeof locations[0]) => {
     if (location.name === "Bellevue") {
-      return "https://maps.google.com/?q=10500+NE+8th+St+Bellevue+WA";
+      return "https://www.google.com/maps?sca_esv=5176837d497f6a28&output=search&q=cafe+hagen+bellevue&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpUrv6YeyJhXfuYqj4Fj6c1U4Z6Yq0xAU8tFlmuJvKXCuCpPJN5Ow4lqJLeH5KKHuHmsErR-gxmpUSArNcd6DRYQ-Zi-zw8uKivhfqeezelRQqEYypuDsfSXneL-73ztgq2R0jRCR6S24NoBcpaiN_YJimzWIBtIp_nrkjPQ5lhhS7lyV1QRE2-1cA2CaXpDNB7b1Z3g&entry=mc&ved=1t:200715&ictx=111";
     }
     const encodedAddress = encodeURIComponent(location.address);
     return `https://maps.google.com/?q=${encodedAddress}+Seattle+WA`;

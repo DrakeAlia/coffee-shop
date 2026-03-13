@@ -71,7 +71,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-6 items-start"
+            className="flex flex-col sm:flex-row gap-6 items-center"
           >
             <button className="bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none w-full sm:w-auto">
               Find a Location

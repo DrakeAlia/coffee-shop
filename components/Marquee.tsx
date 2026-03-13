@@ -16,15 +16,15 @@ const marqueeText = [
 ];
 
 export default function Marquee() {
-  // Create marquee items with separators
-  const marqueeItems = marqueeText.map((text, index) => (
-    <div key={index} className="flex items-center gap-8">
-      <span className="text-warm-white text-lg font-medium">
-        {text}
-      </span>
-      <span className="text-cafe-accent text-2xl">·</span>
-    </div>
-  ));
+  // Create marquee items with separators - each dot has equal spacing on both sides
+  const marqueeItems = marqueeText.flatMap((text, index) => [
+    <span key={`text-${index}`} className="text-warm-white text-lg font-medium">
+      {text}
+    </span>,
+    <span key={`dot-${index}`} className="text-cafe-accent text-2xl mx-6">
+      ·
+    </span>
+  ]);
 
   return (
     <div className="bg-charcoal py-6 overflow-hidden">
@@ -38,7 +38,7 @@ export default function Marquee() {
             duration: 30,
             ease: "linear",
           }}
-          className="flex items-center gap-8 flex-shrink-0"
+          className="flex items-center flex-shrink-0"
         >
           {marqueeItems}
         </motion.div>
@@ -51,7 +51,7 @@ export default function Marquee() {
             duration: 30,
             ease: "linear",
           }}
-          className="flex items-center gap-8 flex-shrink-0"
+          className="flex items-center flex-shrink-0"
         >
           {marqueeItems}
         </motion.div>
