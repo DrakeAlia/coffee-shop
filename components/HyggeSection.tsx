@@ -17,15 +17,11 @@ export default function HyggeSection() {
     offset: ["start 0.9", "end 0.4"],
   });
 
+  // Single useTransform for the entire paragraph (no hooks violation)
+  const paragraphOpacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+
   const text =
     "In Danish, hygge means a quality of coziness that makes one feel content and comfortable. It's the warm glow of candlelight on a winter evening, the comfort of your favorite chair, the presence of good friends. At Cafe Hagen, we've cultivated spaces across Seattle where you can find your own hygge. Whether you're savoring our carefully crafted espresso, enjoying a leisurely brunch, or simply finding a quiet moment with a book, we're here to make you feel at home.";
-
-  const words = text.split(" ");
-  const wordOpacities = words.map((_, i) => {
-    const start = i / words.length - 0.05;
-    const end = i / words.length + 0.15;
-    return useTransform(scrollYProgress, [start, end], [0.15, 1]);
-  });
 
   return (
     <section ref={ref} id="hygge" className="bg-warm-white py-32 lg:py-40">
@@ -70,20 +66,13 @@ export default function HyggeSection() {
               />
             </div>
 
-            <div
+            <motion.div
               ref={textRef}
+              style={{ opacity: paragraphOpacity }}
               className="text-stone text-base leading-loose max-w-prose"
             >
-              {words.map((word, i) => (
-                <motion.span
-                  key={i}
-                  style={{ opacity: wordOpacities[i] }}
-                  className="mr-[0.25em]"
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </div>
+              {text}
+            </motion.div>
 
             <MagneticButton className="bg-[#C4956A] text-white hover:bg-[#A37A52] px-10 py-4 uppercase text-xs tracking-widest font-medium transition-colors rounded-none">
               Our Story

@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import MagneticButton from "@/components/MagneticButton";
 
 const menuData = {
   coffee: [
@@ -139,9 +140,9 @@ export default function MenuSection() {
           </Tabs>
 
           <div className="mt-16">
-            <button className="bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none">
+            <MagneticButton className="bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none">
               View Full Menu
-            </button>
+            </MagneticButton>
           </div>
         </motion.div>
       </div>

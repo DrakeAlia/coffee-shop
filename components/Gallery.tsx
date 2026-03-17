@@ -42,7 +42,7 @@ export default function Gallery() {
         </motion.div>
 
         {/* Gallery Grid - Asymmetric Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-1 auto-rows-[400px]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-1 auto-rows-[280px] sm:auto-rows-[400px]">
           {/* Row 1: Wide brunch spread + tall image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}

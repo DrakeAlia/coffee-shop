@@ -21,9 +21,7 @@ export default function Home() {
       <div className="sticky top-0 z-10 w-full will-change-transform sm:rounded-tl-[2px] sm:rounded-tr-[2px]">
         <Hero />
       </div>
-      <div className="sticky top-0 z-20 w-full will-change-transform sm:rounded-tl-[2px] sm:rounded-tr-[2px]">
-        <Marquee />
-      </div>
+      <Marquee />
       <div className="sticky top-0 z-30 w-full will-change-transform sm:rounded-tl-[2px] sm:rounded-tr-[2px]">
         <HyggeSection />
       </div>

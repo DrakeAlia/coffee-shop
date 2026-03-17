@@ -9,7 +9,7 @@ export default function Hero() {
   const y = useTransform(scrollY, [0, 500], [0, 150]);
 
   return (
-    <section className="relative h-screen w-full flex items-end overflow-hidden">
+    <section className="relative h-screen w-full flex items-end overflow-hidden pt-8 sm:pt-9">
       {/* Background Image with Parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
         <Image

@@ -29,7 +29,7 @@ export default function MoodSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="font-serif text-[20vw] font-light text-warm-white/15 tracking-widest italic leading-none mb-8"
+          className="font-serif text-[28vw] sm:text-[20vw] font-light text-warm-white/15 tracking-widest italic leading-none mb-8"
         >
           hygge
         </motion.h2>
