@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import AnimatedHeading from "@/components/AnimatedHeading";
 
 const galleryImages = [
   { src: "https://static.wixstatic.com/media/3cf4b9_79a4e73385b647f6874d50278a0836f9~mv2.jpg/v1/fill/w_980,h_1470,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3cf4b9_79a4e73385b647f6874d50278a0836f9~mv2.jpg", alt: "Salmon breakfast bun" },
@@ -33,9 +34,11 @@ export default function Gallery() {
               Visual Stories
             </span>
           </div>
-          <h2 className="text-5xl sm:text-6xl font-serif font-light text-warm-white">
-            Gallery
-          </h2>
+          <AnimatedHeading
+            text="Gallery"
+            className="text-5xl sm:text-6xl font-serif font-light text-warm-white"
+            tag="h2"
+          />
         </motion.div>
 
         {/* Gallery Grid - Asymmetric Layout */}

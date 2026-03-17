@@ -10,6 +10,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import AnimatedHeading from "@/components/AnimatedHeading";
+import MagneticButton from "@/components/MagneticButton";
 
 export default function RoastersSection() {
   const ref = useRef(null);
@@ -62,9 +64,11 @@ export default function RoastersSection() {
                 </span>
               </div>
 
-              <h2 className="text-5xl sm:text-6xl font-serif font-light text-charcoal">
-                Roasted with <span className="italic font-normal">obsession</span>
-              </h2>
+              <AnimatedHeading
+                text="Roasted with obsession"
+                className="text-5xl sm:text-6xl font-serif font-light text-charcoal"
+                tag="h2"
+              />
             </div>
 
             <p className="text-stone text-base leading-loose max-w-prose">
@@ -151,9 +155,9 @@ export default function RoastersSection() {
               </div>
             </div>
 
-            <button className="bg-[#C4956A] text-white hover:bg-[#A37A52] px-10 py-4 uppercase text-xs tracking-widest font-medium transition-colors rounded-none">
+            <MagneticButton className="bg-[#C4956A] text-white hover:bg-[#A37A52] px-10 py-4 uppercase text-xs tracking-widest font-medium transition-colors rounded-none">
               Shop Coffee Beans
-            </button>
+            </MagneticButton>
           </motion.div>
         </div>
       </div>

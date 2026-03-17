@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Quote } from "lucide-react";
+import AnimatedHeading from "@/components/AnimatedHeading";
 
 const testimonials = [
   {
@@ -57,9 +58,11 @@ export default function Testimonials() {
                 What People Say
               </span>
             </div>
-            <h2 className="text-5xl sm:text-6xl font-serif font-light text-charcoal">
-              Testimonials
-            </h2>
+            <AnimatedHeading
+              text="Testimonials"
+              className="text-5xl sm:text-6xl font-serif font-light text-charcoal"
+              tag="h2"
+            />
           </div>
 
           {/* Testimonial Slider */}

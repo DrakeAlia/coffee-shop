@@ -147,3 +147,26 @@
     @apply font-sans;
   }
 }
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .animate-ticker {
+    animation: ticker 25s linear infinite;
+  }
+
+  .ticker-mobile {
+    animation: ticker 15s linear infinite;
+  }
+
+  .ticker-desktop {
+    animation: ticker 25s linear infinite;
+  }
+}

@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, Clock, Phone } from "lucide-react";
+import AnimatedHeading from "@/components/AnimatedHeading";
+import MagneticButton from "@/components/MagneticButton";
 
 export default function BellevueSpotlight() {
   const ref = useRef(null);
@@ -27,9 +29,11 @@ export default function BellevueSpotlight() {
                 </span>
               </div>
 
-              <h2 className="text-5xl sm:text-6xl font-serif font-light text-charcoal">
-                Visit Us in Bellevue
-              </h2>
+              <AnimatedHeading
+                text="Visit Us in Bellevue"
+                className="text-5xl sm:text-6xl font-serif font-light text-charcoal"
+                tag="h2"
+              />
             </div>
 
             <div className="space-y-6">
@@ -75,14 +79,12 @@ export default function BellevueSpotlight() {
               </div>
             </div>
 
-            <a
+            <MagneticButton
               href="https://www.google.com/maps?sca_esv=5176837d497f6a28&output=search&q=cafe+hagen+bellevue&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpUrv6YeyJhXfuYqj4Fj6c1U4Z6Yq0xAU8tFlmuJvKXCuCpPJN5Ow4lqJLeH5KKHuHmsErR-gxmpUSArNcd6DRYQ-Zi-zw8uKivhfqeezelRQqEYypuDsfSXneL-73ztgq2R0jRCR6S24NoBcpaiN_YJimzWIBtIp_nrkjPQ5lhhS7lyV1QRE2-1cA2CaXpDNB7b1Z3g&entry=mc&ved=1t:200715&ictx=111"
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-block bg-[#C4956A] text-white px-8 py-3 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none"
             >
               Get Directions
-            </a>
+            </MagneticButton>
           </motion.div>
 
           {/* Map Link */}

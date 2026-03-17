@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
+import MagneticButton from "@/components/MagneticButton";
 
 export default function ContactSection() {
   const ref = useRef(null);
@@ -100,12 +101,12 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="pt-8"
           >
-            <a
+            <MagneticButton
               href="mailto:hello@cafehagen.com"
               className="inline-block bg-[#C4956A] text-white px-10 py-4 uppercase text-xs tracking-widest font-medium hover:bg-[#A37A52] transition-colors rounded-none"
             >
               Send Us a Message
-            </a>
+            </MagneticButton>
           </motion.div>
         </motion.div>
       </div>

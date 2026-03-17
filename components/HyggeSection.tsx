@@ -1,12 +1,31 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import AnimatedHeading from "@/components/AnimatedHeading";
+import MagneticButton from "@/components/MagneticButton";
 
 export default function HyggeSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  // Scroll-linked text reveal
+  const textRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: textRef,
+    offset: ["start 0.9", "end 0.4"],
+  });
+
+  const text =
+    "In Danish, hygge means a quality of coziness that makes one feel content and comfortable. It's the warm glow of candlelight on a winter evening, the comfort of your favorite chair, the presence of good friends. At Cafe Hagen, we've cultivated spaces across Seattle where you can find your own hygge. Whether you're savoring our carefully crafted espresso, enjoying a leisurely brunch, or simply finding a quiet moment with a book, we're here to make you feel at home.";
+
+  const words = text.split(" ");
+  const wordOpacities = words.map((_, i) => {
+    const start = i / words.length - 0.05;
+    const end = i / words.length + 0.15;
+    return useTransform(scrollYProgress, [start, end], [0.15, 1]);
+  });
 
   return (
     <section ref={ref} id="hygge" className="bg-warm-white py-32 lg:py-40">
@@ -44,23 +63,31 @@ export default function HyggeSection() {
                 </span>
               </div>
 
-              <h2 className="text-5xl sm:text-6xl font-serif font-light text-charcoal">
-                Welcome to your <span className="italic font-normal">hygge</span>
-              </h2>
+              <AnimatedHeading
+                text="Welcome to your hygge"
+                className="text-5xl sm:text-6xl font-serif font-light text-charcoal"
+                tag="h2"
+              />
             </div>
 
-            <div className="space-y-6 text-stone text-base leading-loose max-w-prose">
-              <p>
-                In Danish, <span className="italic">hygge</span> means a quality of coziness that makes one feel content and comfortable. It's the warm glow of candlelight on a winter evening, the comfort of your favorite chair, the presence of good friends.
-              </p>
-              <p>
-                At Cafe Hagen, we've cultivated spaces across Seattle where you can find your own hygge. Whether you're savoring our carefully crafted espresso, enjoying a leisurely brunch, or simply finding a quiet moment with a book, we're here to make you feel at home.
-              </p>
+            <div
+              ref={textRef}
+              className="text-stone text-base leading-loose max-w-prose"
+            >
+              {words.map((word, i) => (
+                <motion.span
+                  key={i}
+                  style={{ opacity: wordOpacities[i] }}
+                  className="mr-[0.25em]"
+                >
+                  {word}
+                </motion.span>
+              ))}
             </div>
 
-            <button className="bg-[#C4956A] text-white hover:bg-[#A37A52] px-10 py-4 uppercase text-xs tracking-widest font-medium transition-colors rounded-none">
+            <MagneticButton className="bg-[#C4956A] text-white hover:bg-[#A37A52] px-10 py-4 uppercase text-xs tracking-widest font-medium transition-colors rounded-none">
               Our Story
-            </button>
+            </MagneticButton>
           </motion.div>
         </div>
       </div>

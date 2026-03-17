@@ -58,7 +58,7 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-cafe-accent ${
+                className={`text-xs font-medium uppercase tracking-[0.12em] transition-colors hover:text-cafe-accent ${
                   isScrolled ? "text-charcoal" : "text-warm-white"
                 }`}
               >
@@ -103,7 +103,7 @@ export default function Nav() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="group flex items-center justify-between py-5 border-b border-warm-white/10 text-warm-white/70 hover:text-warm-white transition-all duration-200 text-lg font-light tracking-wide w-full"
+                    className="group flex items-center justify-between py-5 border-b border-warm-white/10 text-warm-white/70 hover:text-warm-white transition-all duration-200 text-sm font-light uppercase tracking-[0.08em] w-full"
                   >
                     {link.label}
                     <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" />
