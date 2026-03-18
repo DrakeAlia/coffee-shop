@@ -18,10 +18,8 @@ export default function HyggeSection() {
   });
 
   // Single useTransform for the entire paragraph (no hooks violation)
-  const paragraphOpacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+  const paragraphOpacity = useTransform(scrollYProgress, [0, 0.3], [0.4, 1]);
 
-  const text =
-    "In Danish, hygge means a quality of coziness that makes one feel content and comfortable. It's the warm glow of candlelight on a winter evening, the comfort of your favorite chair, the presence of good friends. At Cafe Hagen, we've cultivated spaces across Seattle where you can find your own hygge. Whether you're savoring our carefully crafted espresso, enjoying a leisurely brunch, or simply finding a quiet moment with a book, we're here to make you feel at home.";
 
   return (
     <section ref={ref} id="hygge" className="bg-warm-white py-32 lg:py-40">
@@ -69,9 +67,14 @@ export default function HyggeSection() {
             <motion.div
               ref={textRef}
               style={{ opacity: paragraphOpacity }}
-              className="text-stone text-base leading-loose max-w-prose"
+              className="space-y-6 text-stone text-base leading-loose max-w-prose"
             >
-              {text}
+              <p>
+                In Danish, hygge means a quality of coziness that makes one feel content and comfortable. It's the warm glow of candlelight on a winter evening, the comfort of your favorite chair, the presence of good friends.
+              </p>
+              <p>
+                At Cafe Hagen, we've cultivated spaces across Seattle where you can find your own hygge. Whether you're savoring our carefully crafted espresso, enjoying a leisurely brunch, or simply finding a quiet moment with a book, we're here to make you feel at home.
+              </p>
             </motion.div>
 
             <MagneticButton className="bg-[#C4956A] text-white hover:bg-[#A37A52] px-10 py-4 uppercase text-xs tracking-widest font-medium transition-colors rounded-none">
